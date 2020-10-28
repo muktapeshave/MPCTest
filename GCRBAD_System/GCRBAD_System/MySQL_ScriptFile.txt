@@ -1,0 +1,54 @@
+DROP DATABASE IF EXISTS iga_db;
+
+CREATE DATABASE iga_db;
+
+USE iga_db;
+
+DROP TABLE IF EXISTS customer_master;
+
+CREATE TABLE customer_master (
+  CustomerId int PRIMARY KEY AUTO_INCREMENT,
+  CustomerName varchar(15) NOT NULL,
+  Address varchar(50) NOT NULL,
+  City varchar(20) NOT NULL,
+  State varchar(20) NOT NULL
+);
+
+INSERT INTO customer_master(CustomerName, Address, City, State) VALUES
+('Netra Patil','23 KP Road, Kothrud','Pune','Maharashtra'),
+('Preeti Chwala','107 Raj Socity, Karve_road','Pune','Maharashtra'),
+('Gulab Mali','41/2 Anand Nagar, Kothrud','Pune','Maharashtra'),
+('Umesh Patil','24/3 DP Road, Model_colony','Pune','Maharashtra'),
+('Shankar Kale','203 Ganga Cypress, ERANDWANE','Pune','Maharashtra'),
+('Suhas Joshi','209 Elementa, Bhusari_colony','Pune','Maharashtra'),
+('Anjali Jadhav','420 Ruup Nagar, Model_colony','Pune','Maharashtra'),
+('Sanjay Mone','234 Hirananda Complex, Kothrud','Pune','Maharashtra'),
+('Shahid kapoor','451 Deep Bangala, Vanjari','Nagpur','Maharashtra'),
+('Karan singh','607 Good Luck colony, Monipura','Nagpur','Maharashtra'),
+('Arjun Dalvi','2/6 Rajas Socity, Dhantoli','Nagpur','Maharashtra'),
+('Anjali Gore','420 Ruup Nagar, Pipla','Nagpur','Maharashtra'),
+('Sanjay Mone','234 Hirananda Complex, Bhokara','Nagpur','Maharashtra'),
+('Rohan Shinde','451 Deep Bangala, Davlameti','Nagpur','Maharashtra'),
+('Karan Suri','607 Good Luck colony, Gandhibagh','Nagpur','Maharashtra'),
+('Sachit Patil','8/6 Rajas Socity, Narsala','Nagpur','Maharashtra'),
+('Shekhar Kumar','54/2 Shivaji Nagar, Baiyappanahalli','Bangalore','Karnataka'),
+('Dinesh Tayade','4/23 Abhinav colony, Yeshwanthpur','Bangalore','Karnataka'),
+('Anil Pille','43/1 Kali Socity, Nagarbhavi','Bangalore','Karnataka'),
+('Anuradha Jadhav','12 Rudra Nagar, KHB Colony','Bangalore','Karnataka'),
+('Komal Shivani','39-4 Prakruthi Enclave, Kothnur','Bangalore','Karnataka'),
+('Kiran Gavkare','439-1 LIC Colony, Koramangala','Bangalore','Karnataka'),
+('Lalit Joshi','390 Indra Nagar, Marathahalli','Bangalore','Karnataka'),
+('Vinayak Mohite','32/1 Defence Colony, Indiranagar','Bangalore','Karnataka');
+
+DROP TABLE IF EXISTS cylinder_refill_request;
+
+CREATE TABLE cylinder_refill_request (
+  RequestId varchar(13) PRIMARY KEY,
+  CustomerId int NOT NULL,
+  RequestDate date NOT NULL,
+  RemainingCylinders int NOT NULL,
+  DeliveryStatus varchar(9) NOT NULL,
+  ActualDeliveryDate date DEFAULT NULL,
+  TotalAmountPaid double DEFAULT NULL,
+  FOREIGN KEY (CustomerId) REFERENCES customer_master (CustomerId)
+);

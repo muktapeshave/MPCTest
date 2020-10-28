@@ -1,0 +1,32 @@
+<CityWiseCustomers>
+  <Customers City="Pune" State="Maharashtra">
+    <Customer CustomerId="1">
+      <Name>Netra Patil</Name>
+      <Address>23 KP Road, Kothrud</Address>
+    </Customer>
+    <Customer CustomerId="2">
+      <Name>Preeti Chwala</Name>
+      <Address>107 Raj Socity, Karve_road</Address>
+    </Customer>    
+  </Customers>
+  <Customers City="Nagpur" State="Maharashtra">
+    <Customer CustomerId="9">
+      <Name>Shahid kapoor</Name>
+      <Address>451 Deep Bangala, Vanjari</Address>
+    </Customer>
+    <Customer CustomerId="10">
+      <Name>Karan singh</Name>
+      <Address>607 Good Luck colony, Monipura</Address>
+    </Customer>   
+  </Customers>
+  <Customers City="Bangalore" State="Karnataka">
+    <Customer CustomerId="17">
+      <Name>Shekhar Kumar</Name>
+      <Address>54/2 Shivaji Nagar, Baiyappanahalli</Address>
+    </Customer>
+    <Customer CustomerId="18">
+      <Name>Dinesh Tayade</Name>
+      <Address>4/23 Abhinav colony, Yeshwanthpur</Address>
+    </Customer>    
+  </Customers>
+</CityWiseCustomers>
